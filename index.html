@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vueDay6</title>
+    <link rel="stylesheet" href="./css/vueDay6.css">
+</head>
+
+<body>
+    <main>
+        <section id="app">
+            <div class="container">
+                <h1>{{title}}</h1>
+                <div class="input">
+                    <h2>請新增貓貓</h2>
+                    <p>
+                        貓貓名稱:
+                        <input type="text" v-model="input.name" >
+                    </p>
+                    <p>
+                        貓貓種類:
+                        <select name="" id="" v-model="input.src">
+                            <option v-for="(item,index) in cat" :value="item.src">{{item.title}}</option>
+                        </select>
+                    </p>
+                    <p>
+                        喜歡:
+                        <label v-for="(item, index) in cat">
+                            <input type="checkbox"  :value="item.like" v-model="input.like">{{item.like}}
+                        </label>
+                    </p>
+                    <button @click="addNewCat">送出</button>
+                </div>
+                <div class="row" v-for="(item, index) in newCat">
+                    <img :src="item.src" alt="">
+                    <h2><span>{{index + 1}}號貓貓:</span>{{item.title}}</h2>
+                    <h3>{{item.like ? '喜歡' + item.like : ''}}</h3>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.js'></script>
+    <script src="./js/vueDay6.js"></script>
+</body>
+
+</html>
