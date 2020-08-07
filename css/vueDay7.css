@@ -695,8 +695,16 @@ body .inputs {
   padding: 50px 50px 0 50px;
 }
 
-body .inputs label {
-  margin: 0 16px;
+@media screen and (min-width: 768px) {
+  body .inputs label {
+    margin: 0 16px;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  body .inputs label {
+    margin: 0 16px;
+  }
 }
 
 body .inputs label:hover {
@@ -714,13 +722,25 @@ body .cards {
 }
 
 body .cards .card {
-  width: 30%;
+  width: 90%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   margin: 40px 0 40px 0;
+}
+
+@media screen and (min-width: 768px) {
+  body .cards .card {
+    width: 45%;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  body .cards .card {
+    width: 30%;
+  }
 }
 
 body .cards .card .card_sm {
