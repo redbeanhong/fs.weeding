@@ -1,13 +1,13 @@
 .text-primary {
-  color: #CCC4C0;
+  color: #2A88CD;
 }
 
 .text-second {
-  color: #A3A9B0;
+  color: #92C0E1;
 }
 
 .text-mid {
-  color: #4C5870;
+  color: #67A9D9;
 }
 
 .text-dark {
@@ -19,15 +19,15 @@
 }
 
 .bg-primary {
-  background-color: #CCC4C0;
+  background-color: #2A88CD;
 }
 
 .bg-second {
-  background-color: #A3A9B0;
+  background-color: #92C0E1;
 }
 
 .bg-mid {
-  background-color: #4C5870;
+  background-color: #67A9D9;
 }
 
 .bg-dark {
@@ -46,8 +46,16 @@
   width: 75%;
 }
 
+.w-65 {
+  width: 65%;
+}
+
 .w-50 {
   width: 50%;
+}
+
+.w-35 {
+  width: 35%;
 }
 
 .w-25 {
@@ -78,8 +86,8 @@
   height: auto;
 }
 
-.h-100 {
-  height: 100px;
+.h-150 {
+  height: 150px;
 }
 
 .h-200 {
@@ -674,95 +682,314 @@
   margin: 10rem 0;
 }
 
+.d-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.justify-content-center {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.align-items-center {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
 
+html, body {
+  font-size: 14px;
+}
+
+@media screen and (min-width: 768px) {
+  html, body {
+    font-size: 16px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  html, body {
+    font-size: 18px;
+  }
+}
+
 body {
   margin: 0;
-  background-color: gray;
+  font-family: 'Crimson Text','Noto Serif TC', serif;
 }
 
 body h1 {
-  text-align: center;
-  font-size: 30px;
-  color: white;
+  font-size: 2rem;
+  letter-spacing: 2px;
+  font-weight: 900;
+  padding: calc(0.36rem + 0.22rem) 0 calc(0.36rem - 0.22rem) 0;
+  margin: 0;
 }
 
-body .inputs {
-  font-size: 20px;
-  padding: 50px 50px 0 50px;
+body h2 {
+  font-size: 1.44rem;
+  letter-spacing: 2px;
+  font-weight: 900;
+  padding: calc(0.36rem + 0.22rem) 0 calc(0.36rem - 0.22rem) 0;
+  margin: 0;
 }
 
-@media screen and (min-width: 768px) {
-  body .inputs label {
-    margin: 0 16px;
-  }
+body h3 {
+  font-size: 1.1em;
+  letter-spacing: 0.8px;
+  font-weight: 900;
+  padding: calc(0.5rem + 0.2rem) 0 calc(0.5rem - 0.2rem) 0;
+  margin: 0;
 }
 
-@media screen and (min-width: 1400px) {
-  body .inputs label {
-    margin: 0 16px;
-  }
+body span {
+  font-size: 1rem;
+  letter-spacing: 0.8px;
+  font-weight: 400;
+  padding: calc(0.25rem + 2px) 0 0.25rem 0;
+  margin: 0;
+  line-height: 2rem;
 }
 
-body .inputs label:hover {
-  color: blue;
+body p {
+  font-size: 1rem;
+  letter-spacing: 0.8px;
+  font-weight: 400;
+  padding: calc(0.25rem + 2px) 0 0.25rem 0;
+  margin: 0;
 }
 
-body .cards {
+body nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
 }
 
-body .cards .card {
-  width: 90%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  margin: 40px 0 40px 0;
+body nav img {
+  height: 80px;
 }
 
-@media screen and (min-width: 768px) {
-  body .cards .card {
-    width: 45%;
-  }
-}
-
-@media screen and (min-width: 1400px) {
-  body .cards .card {
-    width: 30%;
-  }
-}
-
-body .cards .card .card_sm {
+body main {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background-color: cadetblue;
 }
 
-body .cards .card .card_sm .two_card {
-  width: 50%;
-  background-color: bisque;
-  padding: 20px;
+body main aside #citys-pc {
+  display: none;
 }
 
-body .cards .card .card_sm .three_card {
-  width: 33.3%;
+@media screen and (min-width: 768px) {
+  body main aside #citys-pc {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  body main aside #citys-pc {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+body main aside #citys-mb {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@media screen and (min-width: 768px) {
+  body main aside #citys-mb {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  body main aside #citys-mb {
+    display: none;
+  }
+}
+
+body main aside .title {
   text-align: center;
 }
 
-body .cards .card .card_sm .two_card img {
+body main aside .position {
+  width: 100%;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+body main aside .position a {
+  display: inline;
+  width: 50%;
+  text-decoration: none;
+  text-align: center;
+  color: #E9EAEB;
+}
+
+body main aside .position a:hover {
+  color: #044879;
+}
+
+body main article {
+  border-radius: 50px 0 0 50px;
+}
+
+body main article .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body main article .content .h1-style {
+  font-size: 40px;
+  margin: 0;
+}
+
+@media screen and (min-width: 768px) {
+  body main article .content .h1-style {
+    font-size: 100px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  body main article .content .h1-style {
+    font-size: 100px;
+  }
+}
+
+body main article .content #town-list-pc {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  body main article .content #town-list-pc {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  body main article .content #town-list-pc {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
+body main article .content #town-list-pc a {
+  display: inline;
+  width: 33.3%;
+  text-decoration: none;
+  text-align: center;
+  color: #E9EAEB;
+}
+
+body main article .content #town-list-pc a:hover {
+  color: #044879;
+}
+
+body main article .content #town-list-mb {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+@media screen and (min-width: 768px) {
+  body main article .content #town-list-mb {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  body main article .content #town-list-mb {
+    display: none;
+  }
+}
+
+body main article .hr-24 {
+  display: none;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+@media screen and (min-width: 768px) {
+  body main article .hr-24 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  body main article .hr-24 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+body main article .hr-24 table {
+  table-layout: fixed;
+  text-align: center;
+}
+
+body main article .hr-24 table h3 {
+  padding: 0;
+}
+
+body main article .hr-24 table .w-100px {
   width: 100px;
 }
-/*# sourceMappingURL=vueDay7.css.map */
+
+body main article .hr-24 table tr:nth-child(1) td:nth-child(odd) {
+  background-color: cornflowerblue;
+}
+
+body main article .hr-24 table tr:nth-child(1) td:nth-child(even) {
+  background-color: darkcyan;
+}
+
+body main article .hr-24 table img {
+  width: 75%;
+}
+
+body main article .hr-24 .card {
+  width: 25%;
+}
+
+body footer {
+  text-align: center;
+}
+/*# sourceMappingURL=HollowWeather.css.map */
