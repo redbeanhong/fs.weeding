@@ -1,0 +1,13 @@
+@import '_style-guide';
+@import '_base';
+
+body{
+    
+    .style-show{
+        display: flex;
+
+        .style-show-case{
+            flex-grow: 1;
+        }
+    }
+}

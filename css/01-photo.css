@@ -1,0 +1,58 @@
+@media screen and (min-width: 768px) {
+  body main #photo .photo-card-group .photo-card:nth-child(even) .photo-card-text {
+    -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+            order: -1;
+  }
+}
+
+body main #photo .photo-card-group .photo-card {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body main #photo .photo-card-group .photo-card .photo-card-img {
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  body main #photo .photo-card-group .photo-card .photo-card-img {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  body main #photo .photo-card-group .photo-card .photo-card-img {
+    width: 50%;
+  }
+}
+
+body main #photo .photo-card-group .photo-card .photo-card-img img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+body main #photo .photo-card-group .photo-card .photo-card-text {
+  padding: 1rem;
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  body main #photo .photo-card-group .photo-card .photo-card-text {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  body main #photo .photo-card-group .photo-card .photo-card-text {
+    width: 50%;
+  }
+}
+/*# sourceMappingURL=01-photo.css.map */

@@ -1,0 +1,427 @@
+@import '_style-guide';
+@import '_base';
+
+body{
+    header{
+        overflow: hidden;
+
+        // 轉場動畫
+        .page-change{
+            width: 100%;
+            height: 100vh;
+            background-color: $color-primary;
+            position: fixed;
+            z-index: 3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+
+            .page-change-circle{
+                width: 30vw;
+                height: 30vw;
+                background-color: $color-light;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+
+                img{
+                    width: 80%;
+                    height: auto;
+                }
+
+                animation: page-open 2s;
+                animation-fill-mode: forwards;
+
+                @keyframes page-open {
+                    0%{
+                        width: 100vw;
+                        height: 100vw;
+                        opacity: 0;
+                    }
+                    50%{
+                        width: 30vw;
+                        height: 30vw;
+                        opacity: 1;
+                    }
+                    100%{
+                        width: 100vw;
+                        height: 100vw;
+                        opacity: 0;
+                    }
+                }
+            }
+        }
+
+        // navbar
+        .navbar{
+            width: 100%;
+            position: fixed;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            z-index: 2;
+
+            // nav線條
+            .navbar-line{
+                width: 100%;
+                height: 70px;
+                padding: 1.5rem;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: -70px;
+                position: relative;
+                z-index: 2;
+
+                // nav-平板
+                @media screen and(min-width: 768px) {
+                    height: 100px;
+                    margin-bottom: -100px;
+                }
+
+                // nav-電腦
+                @media screen and(min-width: 1200px) {
+                    height: 100px;
+                    margin-bottom: -100px;
+                }
+
+                // nav線條-出場動畫
+                &.show{
+                    animation: nav-fade-in 1s;
+                    animation-delay: 1s;
+                    animation-fill-mode: forwards;
+
+                    @keyframes nav-fade-in {
+                        0%{
+                            width: 30%;
+                        }
+                        100%{
+                            width: 100%;
+                        }
+                    }
+                }
+
+                // nav線條-背景轉白
+                &.active{
+                    animation: nav-bcg-active 1s;
+                    animation-fill-mode: forwards;
+
+                    @keyframes nav-bcg-active {
+                        0%{
+                            width: 30%;
+                            background-color: rgba($color: $color-light, $alpha: 0)
+                        }
+                        100%{
+                            width: 100%;
+                            background-color: $color-light-op;
+                        }
+                    }
+                    background-color: $color-light-op;
+                }
+
+                // nav線條-背景轉透明
+                &.active.nav-bcg-change{
+                    animation: nav-bcg-change 1s;
+                    animation-fill-mode: forwards;
+
+                    @keyframes nav-bcg-change {
+                        0%{
+                            background-color: $color-light-op;
+                        }
+                        100%{
+                            background-color: rgba($color: $color-light, $alpha: 0)
+                        }
+                    }
+                }
+                
+                // nav上面的LOGO
+                .navbar-logo{
+                    height: 100%;
+
+                    img{
+                        height: 100%;
+                    }
+                }
+
+                // 漢堡條
+                .navbar-hamburger{
+                    width: 40px;
+                    height: 50%;
+                    position: relative;
+
+                    .navbar-hamburger-line{
+                        width: 100%;
+                        height: 2px;
+                        background-color: $color-primary;
+                        position: absolute;
+                        right:0;
+                    }
+
+                    .navbar-hamburger-line:nth-child(1){
+                        top: 0;
+                    }
+
+                    .navbar-hamburger-line:nth-child(2){
+                        top: calc(50% - 1px);
+                    }
+
+                    .navbar-hamburger-line:nth-child(3){
+                        bottom: 0;
+                    }
+
+                    // 漢堡條-正常動畫
+                    &.prepare{
+                        .navbar-hamburger-line:nth-child(1),.navbar-hamburger-line:nth-child(3){
+                            animation: nav-prepare 2s;
+                            animation-iteration-count: infinite;
+
+                            @keyframes nav-prepare {
+                                0%{
+                                    width: 40px;
+                                }
+                                75%{
+                                    background-color: $color-primary;
+                                }
+                                100%{
+                                    width: 0px;
+                                    background-color: $color-light;
+                                }
+                            }
+                        }
+                        .navbar-hamburger-line:nth-child(2){
+                            animation: nav-prepare 2s;
+                            animation-delay: 0.5s;
+                            animation-iteration-count: infinite;
+                        }
+                    }
+
+                    // 漢堡條-打開動畫
+                    &.active{
+                        .navbar-hamburger-line:nth-child(1){
+                            animation: nav-normal-top 1.5s;
+                            animation-fill-mode: forwards;
+
+                            @keyframes nav-normal-top {
+                                0%{
+                                    transform: rotate(0deg);
+                                    top: 0;
+                                }
+                                100%{
+                                    transform: rotate(45deg);
+                                    top: 50%;
+                                    background-color: $color-light;
+                                }
+                            }
+                        }
+                        .navbar-hamburger-line:nth-child(2){
+                            animation: nav-normal-mid 1s;
+                            animation-fill-mode: forwards;
+
+                            @keyframes nav-normal-mid {
+                                0%{
+                                    width: 40px;
+                                }
+                                100%{
+                                    width: 0px;
+                                    background-color: $color-light;
+                                }
+                            }
+                        }
+                        .navbar-hamburger-line:nth-child(3){
+                            animation: nav-normal-bottom 1.5s;
+                            animation-fill-mode: forwards;
+
+                            @keyframes nav-normal-bottom {
+                                0%{
+                                    transform: rotate(0deg);
+                                    bottom: 0;
+                                }
+                                100%{
+                                    transform: rotate(-45deg);
+                                    top: 50%;
+                                    background-color: $color-light;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            // 漢堡條打開後出現的nav選單
+            #nav{
+                width: 100%;
+                height: 100vh;
+                position: relative;
+                right: -100%;
+                top: 0;
+
+                // nav-平板
+                @media screen and(min-width: 768px) {
+                    width: 50%;
+                }
+
+                // nav-電腦
+                @media screen and(min-width: 1200px) {
+                    width: 600px;
+                }
+
+                // nav選單-打開動畫
+                &.active{
+                    animation: nav-bg-show 1.5s;
+                    animation-fill-mode: forwards;
+
+                    @keyframes nav-bg-show {
+                        0%{
+                            right: -100%;
+                        }
+                        100%{
+                            right: 0;
+                        }
+                    }
+
+                    .nav-content{
+                        animation: nav-show 1.5s;
+                        animation-fill-mode: forwards;
+
+                        @keyframes nav-show {
+                            0%{
+                                left: 0;
+                                width: 50%;
+                            }
+                            100%{
+                                width: 100%;
+                                left: 0;
+                            }
+                        }
+                    }
+                }
+
+                // nav選單-關閉動畫
+                &.fade{
+                    animation: nav-bg-fade 1.5s;
+                    animation-fill-mode: forwards;
+
+                    @keyframes nav-bg-fade {
+                        0%{
+                            right: 0;
+                        }
+                        100%{
+                            right: -100%;
+                        }
+                    }
+
+                    .nav-content{
+                        animation: nav-fade 1.5s;
+                        animation-fill-mode: forwards;
+
+                        @keyframes nav-fade {
+                            0%{
+                                width: 100%;
+                                left: 0;
+                            }
+                            100%{
+                                width: 50%;
+                                left: 0;
+                            }
+                        }
+                    }
+                }
+
+                .nav-content{
+                    width: 100%;
+                    height: 100%;
+                    padding: 100px 1.5rem 0 1.5rem;
+                    background-color: $color-primary;
+                    display: flex;
+                    flex-direction: column;
+                    position: relative;
+    
+                    img{
+                        width: 80%;
+                        height: auto;
+                    }
+    
+                    .button-group{
+                        display: flex;
+                    }
+    
+                    .nav-title-group{
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-start;
+
+                        a{
+                            display: inline-block;
+                            text-decoration-line: none;
+                            color: $color-light;
+                            position: relative;
+                            transition: 0.5s;
+
+                            &::after{
+                                content: '';
+                                position: absolute;
+                                left: 50%;
+                                right: 50%;
+                                bottom: -2px;
+                                border-bottom: 1px solid $color-light;
+                                transition: 0.5s;
+                            }
+
+                            &:hover{
+                                transform: scale(1.2);
+                                &::after{
+                                    left: 0;
+                                    right: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // footer
+    footer{
+
+        .container{
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+
+            img{
+                width: 80%;
+                height: auto;
+            }
+
+            .footer-contact{
+                width: 100%;
+
+                // footer-contact-平板
+                @media screen and(min-width: 768px) {
+                    width: 50%;
+                }
+
+                // footer-contact-電腦
+                @media screen and(min-width: 1200px) {
+                    width: 50%;
+                }
+            }
+
+            .footer-contact:nth-child(2){
+                margin-top: 2rem;
+
+                // footer-contact:nth-child(2)-平板
+                @media screen and(min-width: 768px) {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    align-items: flex-end;
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+}

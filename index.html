@@ -4,159 +4,141 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="哈囉氣象預報">
-    <title>哈囉氣象預報</title>
-    <link rel="stylesheet" href="./css/HollowWeather.css">
+    <meta name="keywords" content="FLOWER STUDIO,婚紗">
+    <title>FLOWER STUDIO</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&family=Poiret+One&display=swap"
+        rel="stylesheet">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/css/swiper.min.css' />
+    <link rel="stylesheet" href="./css/nav.css">
+    <link rel="stylesheet" href="./css/index.css">
+
 </head>
 
-<body class="bg-primary">
-    <nav class="bg-primary w-100 p-2">
-        <img src="./img/logo.jpg" alt="" class="mr-2">
-        <h1 class="text-light">哈囉氣象預報</h1>
-    </nav>
+<body class="bg-light">
+    <header>
+        <!-- 轉場動畫 -->
+        <div class="page-change" id="page-change">
+            <div class="page-change-circle">
+                <img src="./img/logo-02.png" alt="">
+            </div>
+        </div>
 
-    <main id="app">
-
-        <!-- 左側城市選單 -->
-        <aside class="w-25 bg-primary text-light p-2">
-
-            <!-- 目前所選城市/鄉鎮 -->
-            <section>
-                <div class="title">
-                    <h2>我的地點</h2>
-                    <hr>
+        <!-- Nav -->
+        <div class="navbar text-light">
+            <!-- navbar -->
+            <div class="navbar-line" id="navbar-line">
+                <!-- nav-logo -->
+                <div class="navbar-logo">
+                    <a href="./index.html"><img src="./img/logo-02.png" alt="logo"></a>
                 </div>
-                <div class="position">
-                    <a href="">
-                        <h3>{{input.city}}</h3>
-                    </a>
-                    <a href="">
-                        <h3>{{input.town}}</h3>
-                    </a>
+                <!-- 漢堡條 -->
+                <div class="navbar-hamburger prepare" id="navbar-hamburger">
+                    <div class="navbar-hamburger-line"></div>
+                    <div class="navbar-hamburger-line"></div>
+                    <div class="navbar-hamburger-line"></div>
                 </div>
-            </section>
+            </div>
 
-            <!-- 台灣其他城市 -->
-            <section class="mt-2">
-                <div class="title">
-                    <h2>台灣主要城市</h2>
-                    <hr>
-                </div>
-
-                <!-- 電腦/平板 城市清單 -->
-                <div class="position" id="citys-pc">
-                    <a :href="item.href" v-for="(item,index) in cityData">
-                        <h3>{{item.city}}</h3>
-                    </a>
-                </div>
-                <!-- 手機 城市清單 -->
-                <div id="citys-mb">
-                    <select name="" id="">
-                        <option :value="item.href" v-for="(item,index) in cityData">
-                            <h3>{{item.city}}</h3>
-                        </option>
-                    </select>
-                </div>
-            </section>
-
-        </aside>
-
-        <!-- 右側氣象內文 -->
-        <article class="w-75 bg-mid p-2 text-light">
-
-            <section class="content">
-                <div class="w-65">
-                    <!-- 現在所在城市 -->
-                    <div class="">
-                        <h2 class="h1-style">{{input.city}}</h2>
-                        <h2>{{input.town}}</h2>
-                        <h3>{{checkTime()}}</h3>
+            <!-- nav選單(點擊漢堡條後出現) -->
+            <nav id="nav">
+                <div class="nav-content">
+                    <img src="./img/logo-01.png" alt="logo">
+                    <div class="nav-title-group mt-2">
+                        <a href="./index.html">
+                            <h2>關於我們</h2>
+                        </a>
+                        <a href="./01-photo.html" class="mt-1">
+                            <h2>攝影方案</h2>
+                        </a>
+                        <a href="./02-service.html" class="mt-1">
+                            <h2>服務內容</h2>
+                        </a>
+                        <a href="./03-contact.html" class="mt-1">
+                            <h2>聯絡資訊</h2>
+                        </a>
                     </div>
-                    <div class="">
-                        <img :src="checkWeatherImg(checkTown().weatherElement[6].time[0].elementValue[0].value)" alt=""
-                            height="100px" :title="checkTown().weatherElement[6].time[0].elementValue[0].value">
-                        <p>↑{{checkTown().weatherElement[12].time[0].elementValue[0].value}}°
-                            ↓{{checkTown().weatherElement[8].time[0].elementValue[0].value}}°</p>
-                        <h2>{{checkTown().weatherElement[1].time[0].elementValue[0].value}}℃</h2>
+                    <div class="button-group mt-2">
+                        <a href="#" class="button-small button-color-op">聯絡我們</a>
+                        <a href="#" class="button-small button-color-op ml-1">聯絡我們</a>
+                    </div>
+                    <div class="nav-contact mt-2">
+                        <h2>&#9742 04-1234-5678</h2>
+                        <p>*10:00~19:00</p>
+                        <p>手機專線:0900-123-456</p>
+                        <p>FS台中旗艦店-台中市台中路001號</p>
                     </div>
                 </div>
-                <!-- 電腦 鄉鎮清單 -->
-                <div class="w-35" id="town-list-pc">
-                    <a href="#" v-for="(item,index) in town">
-                        <h3>{{item.locationName}}</h3>
-                    </a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="banner">
+            <!-- banner -->
+            <!-- Swiper -->
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide" style="background-image:url(./img/banner.jpg)"></div>
+                    <div class="swiper-slide" style="background-image:url(./img/banner-2.jpg)"></div>
                 </div>
-
-                <!-- 手機/平板 鄉鎮清單 -->
-                <div class="w-35 pt-5" id="town-list-mb">
-                    <select name="" id="" v-model="input.town">
-                        <option :value="item.locationName" v-for="(item,index) in town">
-                            <h3>{{item.locationName}}</h3>
-                        </option>
-                    </select>
+                <!-- Swiper-Pagination -->
+                <div class="swiper-pagination"></div>
+                <!-- Swiper-text -->
+                <div class="banner-text">
+                    <p class="mb-2">將為您帶來<br>極致的美與感動</p>
+                    <p>To Be Continued...</p>
                 </div>
-            </section>
-
-            <!-- 24hr氣象 -->
-            <section class="hr-24 mt-2">
-                <table class="w-100">
-                    <tr>
-                        <td class="w-100px">
-                            <h3>日期</h3>
-                        </td>
-                        <td :colspan="item.colspan" v-for="item in todayIs()">
-                            <h3>{{item.day}}</h3>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <h3>時間</h3>
-                        </td>
-                        <td v-for="item in dayOrNight()">{{item}}</td>
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <h3>降雨機率</h3>
-                        </td>
-                        <td v-for="item in checkTown().weatherElement[0].time">{{item.elementValue[0].value}}%</td>
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <h3>天氣</h3>
-                        </td>
-                        <td v-for="item in checkTown().weatherElement[6].time"><img
-                                :src="checkWeatherImg(item.elementValue[0].value)" :alt="item.elementValue[0].value"
-                                :title="item.elementValue[0].value"></td>
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <h3>最低溫度</h3>
-                        </td>
-                        <td v-for="item in checkTown().weatherElement[8].time">↓{{item.elementValue[0].value}}°</td>
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <h3>最高溫度</h3>
-                        </td>
-                        <td v-for="item in checkTown().weatherElement[12].time">↑{{item.elementValue[0].value}}°</td>
-                    </tr>
-                </table>
-            </section>
-
-        </article>
+            </div>
+        </section>
+        <section class="bg-primary text-light section-py" id="about">
+            <div class="container">
+                <div class="about-text">
+                    <h1>About</h1>
+                    <h2>關於我們</h2>
+                    <img src="./img/logo-01.png" alt="" height="30px" class="my-2">
+                    <p>FS婚紗攝影於2020年成立</p>
+                    <p>提供最高品質、優質服務</p>
+                    <p>陣容最堅強攝影團隊</p>
+                    <p>|</p>
+                    <h2>獲獎紀錄</h2>
+                    <p>2020 黑白攝影大賽－金牌獎</p>
+                    <p>2020 攝影口碑票選活動－優選</p>
+                </div>
+            </div>
+        </section>
+        <section class="bg-light text-primary" id="slogan">
+            <div class="slogan-area bcg slogan-pct"></div>
+            <div class="container">
+                <div class="slogan-area section-py">
+                    <div class="slogan-area-text">
+                        <h2>Love, promised between the fingers.</h2>
+                        <h2>Finger rift, twisted in the love.</h2>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
-
-    <footer class="bg-primary m-0 py-1 text-light">
-        <p>資料來源:中央氣象局</p>
+    <footer class="bg-primary text-light section-py">
+        <div class="container">
+            <div class="footer-contact">
+                <p>頂尖專業婚紗攝影</p>
+                <h2>開啟您美好攝影體驗</h2>
+                <h2 class="my-2">&#9742 04-1234-5678 <span>*10:00-19:00</span></h2>
+                <p>手機服務專線 0900-123-456</p>
+                <p>地址:台中市台中路001號</p>
+            </div>
+            <div class="footer-contact">
+                <img src="./img/logo-01.png" alt="">
+                <div class="footer-contact-text">
+                    <p>紀錄關於愛與愛情的故事</p>
+                    <p>2020 &copy; FLOWER STUDIO</p>
+                </div>
+            </div>
+        </div>
     </footer>
-
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.js'></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/js/swiper.min.js'></script>
+    <script src="./js/nav.js"></script>
     <script src="./js/index.js"></script>
 </body>
 

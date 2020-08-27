@@ -1,0 +1,182 @@
+// 色卡設定
+$color-primary: #70C7DC;
+$color-primary-op:rgba($color: #70C7DC, $alpha: 0.8);
+$color-second: #70C7C8;
+$color-mid: #67A9D9;
+$color-dark: #3D3E3C;
+$color-light: #ffffff;
+$color-light-op: rgba($color: #ffffff, $alpha: 0.9);
+$color-hover: #ffffff;
+$color-link: #0798ff;
+
+.text-primary{color: $color-primary;}
+.text-second{color: $color-second;}
+.text-mid{color: $color-mid;}
+.text-dark{color: $color-dark;}
+.text-light{color: $color-light;}
+
+.bg-primary{background-color: $color-primary;}
+.bg-second{background-color: $color-second;}
+.bg-mid{background-color: $color-mid;}
+.bg-dark{background-color: $color-dark;}
+.bg-light{background-color: $color-light;}
+
+*{
+    box-sizing: border-box;
+}
+
+
+html,body{
+    // 字大小-手機
+    font-size: 14px;
+
+    // 字大小-平板
+    @media screen and(min-width: 768px) {
+        font-size: 16px;
+    }
+
+    // 字大小-電腦
+    @media screen and(min-width: 1200px) {
+        font-size: 18px;
+    }
+}
+
+body{
+    // 字體
+    font-family: 'Poiret One','Noto Sans TC',Arial, sans-serif;
+    margin: 0;
+}
+
+.container{
+    width: 100%;
+    padding: 15px;
+    margin: auto;
+
+    // container-平板
+    @media screen and(min-width: 768px) {
+        width: 720px;
+    }
+
+    // container-電腦
+    @media screen and(min-width: 1200px) {
+        width: 1140px;
+    }
+}
+    
+// 各級字型設定
+h1{
+    font-size: 3rem;
+    font-weight: 900;
+    margin: 0;
+}
+
+h2{
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+h3{
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+p{
+    font-size: 1rem;
+    line-height: 2em;
+    font-weight: 400;
+    margin: 0;
+}
+
+span{
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+// 區塊間距
+.section-py{
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    // section-py-平板
+    @media screen and(min-width: 768px) {
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+
+    // section-py-電腦
+    @media screen and(min-width: 1200px) {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+}
+
+// --------物件區---------//
+
+// 大按鈕尺寸
+.button-big{
+    font-size: 1.5rem;
+    font-weight: 700;
+    width: 200px;
+    height: 80px;
+    border: 1px solid $color-light;
+    border-radius: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration-line: none;
+    transition: 0.3s;
+}
+
+// 小按鈕尺寸
+.button-small{
+    font-size: 1.2rem;
+    font-weight: 700;
+    width: 150px;
+    height: 60px;
+    border: 1px solid $color-light;
+    border-radius: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration-line: none;
+    transition: 0.3s;
+}
+
+// 按鈕顏色-標準色
+.button-color-primary{
+    background: linear-gradient(-20deg,$color-primary,$color-second);
+    color: $color-light;
+}
+
+// 按鈕顏色-透明色
+.button-color-op{
+    color: $color-light;
+}
+
+// 按鈕hover效果
+.button-big:hover,.button-small:hover{
+    background: $color-hover;
+    color: $color-primary;
+}
+
+// 背景處理
+.bcg{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.light-mask{
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color: #ffffff, $alpha: 0.5);
+}
+
+.dark-mask{
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color: #000000, $alpha: 0.5);
+}

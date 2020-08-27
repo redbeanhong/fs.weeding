@@ -1,0 +1,68 @@
+@import '_style-guide';
+@import '_base';
+
+body{
+
+    main{
+        .banner{
+            width: 100%;
+            height: 100vh;
+
+            .swiper-container{
+                width: 100%;
+                height: 100%;
+
+                .swiper-slide {
+                    background-position: center;
+                    background-size: cover;
+                }
+
+                .banner-text{
+                    position: absolute;
+                    right: 10vw;
+                    bottom: 10vw;
+                    background-color: $color-primary-op;
+                    padding: 2rem;
+                    border-radius: 50px;
+                    z-index: 2;
+
+                    p{
+                        font-size: 2rem;
+                        color: $color-light;
+                    }
+                }
+            }
+            
+                
+            
+            
+        }
+
+        #about{
+            text-align: center;
+        }
+
+        #slogan{
+
+            .slogan-pct{
+                background-image: url('../img/about-2.jpg');
+            }
+
+            .slogan-area{
+                height: 300px;
+
+                .slogan-area-text{
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+
+                    h2:nth-child(2){
+                        align-self: flex-end;
+                    }
+                }
+            }
+        }
+    }
+
+}
