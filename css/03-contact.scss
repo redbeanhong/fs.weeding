@@ -1,0 +1,59 @@
+body{
+
+    main{
+
+        #contact{
+
+            .contact-map-group{
+                display: flex;
+                flex-wrap: wrap;
+
+                .contact-map-map{
+                    width: 100%;
+
+                    // contact-map-map平板
+                    @media screen and(min-width: 768px) {
+                        width: 50%;
+                    }
+
+                    // contact-map-map電腦
+                    @media screen and(min-width: 1200px) {
+                        width: 50%;
+                    }
+                    iframe{
+                        width: 100%;
+                        height: 50vh;
+                    }
+                }
+
+                .contact-map-text{
+                    padding: 1rem;
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-end;
+
+                     // contact-map-text平板
+                     @media screen and(min-width: 768px) {
+                        width: 50%;
+                    }
+
+                    // contact-map-text電腦
+                    @media screen and(min-width: 1200px) {
+                        width: 50%;
+                    }
+                }
+            }
+
+            .contact-phone-group{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                .contact-button-group{
+                    display: flex;
+                }
+            }
+        }
+    }
+}

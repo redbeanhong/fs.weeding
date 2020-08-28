@@ -1,0 +1,60 @@
+body{
+
+    main{
+
+        #service{
+
+            .service-card-group{
+                display: flex;
+                flex-wrap: wrap;
+
+                .service-card{
+                    width: 100%;
+                    padding: 20px;
+                    text-align: center;
+
+                    // service-card-平板
+                    @media screen and(min-width: 768px) {
+                        width: 50%;
+                    }
+
+                    // service-card-電腦
+                    @media screen and(min-width: 1200px) {
+                        width: 25%;
+                    }
+
+                    .service-card-text{
+                        min-height: 100px;
+
+                        // service-card-平板
+                        @media screen and(min-width: 768px) {
+                            min-height: 140px;
+                        }
+
+                        // service-card-電腦
+                        @media screen and(min-width: 1200px) {
+                            min-height: 180px;
+                        }
+                    }
+
+                    .service-card-img{
+                        margin: 0 auto -20px auto;
+                        width: 80%;
+                        border-radius: 50%;
+                        background-color: rgb(255, 255, 255);
+                        z-index: 2;
+
+                        img{
+                            width: 100%;
+                        }
+                    }
+
+                    .service-card-title{
+                        padding: 1rem;
+                        border-radius: 15px;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,1 +1,59 @@
-/* No CSS *//*# sourceMappingURL=02-service.css.map */
+body main #service .service-card-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+body main #service .service-card-group .service-card {
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  body main #service .service-card-group .service-card {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  body main #service .service-card-group .service-card {
+    width: 25%;
+  }
+}
+
+body main #service .service-card-group .service-card .service-card-text {
+  min-height: 100px;
+}
+
+@media screen and (min-width: 768px) {
+  body main #service .service-card-group .service-card .service-card-text {
+    min-height: 140px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  body main #service .service-card-group .service-card .service-card-text {
+    min-height: 180px;
+  }
+}
+
+body main #service .service-card-group .service-card .service-card-img {
+  margin: 0 auto -20px auto;
+  width: 80%;
+  border-radius: 50%;
+  background-color: white;
+  z-index: 2;
+}
+
+body main #service .service-card-group .service-card .service-card-img img {
+  width: 100%;
+}
+
+body main #service .service-card-group .service-card .service-card-title {
+  padding: 1rem;
+  border-radius: 15px;
+}
+/*# sourceMappingURL=02-service.css.map */

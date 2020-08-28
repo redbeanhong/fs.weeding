@@ -4,7 +4,7 @@ $color-primary-op:rgba($color: #70C7DC, $alpha: 0.8);
 $color-second: #70C7C8;
 $color-mid: #67A9D9;
 $color-dark: #3D3E3C;
-$color-light: #ffffff;
+$color-light: #f5f3f3;
 $color-light-op: rgba($color: #ffffff, $alpha: 0.9);
 $color-hover: #ffffff;
 $color-link: #0798ff;
@@ -113,6 +113,23 @@ span{
     }
 }
 
+.first-section-py{
+    padding-top: 20vh;
+    padding-bottom: 50px;
+
+    // section-py-平板
+    @media screen and(min-width: 768px) {
+        padding-top: 20vh;
+        padding-bottom: 70px;
+    }
+
+    // section-py-電腦
+    @media screen and(min-width: 1200px) {
+        padding-top: 20vh;
+        padding-bottom: 80px;
+    }
+}
+
 // --------物件區---------//
 
 // 大按鈕尺寸
@@ -160,6 +177,28 @@ span{
 .button-big:hover,.button-small:hover{
     background: $color-hover;
     color: $color-primary;
+}
+
+.line-bar{
+    width: 2px;
+    height: 100px;
+    margin: 10px auto;
+    .line{
+        width: 2px;
+        height: 0px;
+        background-color: $color-primary;
+        animation: line-bar-run 3s;
+        animation-iteration-count: infinite;
+
+        @keyframes line-bar-run {
+            0%{
+                height: 0px;
+            }
+            100%{
+                height: 100px;
+            }
+        }
+    }
 }
 
 // 背景處理
