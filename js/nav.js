@@ -1,4 +1,6 @@
 
+AOS.init();
+
 let $navHamburger = $('#navbar-hamburger');// 漢堡條
 let $navBar = $('#navbar-line');// navbar
 let $navContent = $('#nav');// nav選單
