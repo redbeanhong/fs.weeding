@@ -45,19 +45,31 @@ body{
         #slogan{
 
             .slogan-pct{
-                background-image: url('../img/about-2.jpg');
                 background-attachment:fixed;
-                height: 500px;
+                height: 50vh;
+                display: flex;
+                align-items: center;
+            }
+
+            .slogan-pct:nth-child(1){
+                background-image: url('../img/about-1.jpg');
+            }
+            .slogan-pct:nth-child(3){
+                background-image: url('../img/about-2.jpg');
             }
 
             .slogan-area{
-                height: 300px;
+                height: 30vh;
+                width: 100%;
+                display: flex;
+                align-items: center;
 
                 .slogan-area-text{
                     height: 100%;
                     display: flex;
                     flex-direction: column;
                     justify-content: space-between;
+                    overflow: hidden;
 
                     h2:nth-child(2){
                         align-self: flex-end;
