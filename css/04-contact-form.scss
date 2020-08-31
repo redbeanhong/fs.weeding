@@ -1,0 +1,60 @@
+// 色卡設定
+$color-primary: #70C7DC;
+$color-primary-op:rgba($color: #70C7DC, $alpha: 0.8);
+$color-second: #70C7C8;
+$color-mid: #67A9D9;
+$color-dark: #3D3E3C;
+$color-light: #f5f3f3;
+$color-light-op: rgba($color: #ffffff, $alpha: 0.9);
+$color-hover: #ffffff;
+$color-link: #0798ff;
+
+body{
+
+    main{
+
+        #contact-form{
+            
+            form{
+
+                .contact-input-group{
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                fieldset{
+                    border: 1px solid $color-primary;
+                    border-radius: 10px;
+                    padding: 20px;
+
+                    legend{
+                        background: linear-gradient(-20deg,$color-primary,$color-second);
+                        color: $color-light;
+                        border-radius: 10px;
+                        padding: 10px 20px;
+                    }
+
+                    label{
+                        display: inline-block;
+                        width: 100px;
+                        text-align: right;
+                    }
+
+                    input{
+                        width: calc(100% - 100px);
+                        height: 50px;
+                        border-radius: 5px;
+                        border: 1px solid $color-primary;
+                    }
+
+                    input[type=textarea]{
+                        height: 200px;
+                    }
+
+                }
+            }
+        }
+    }
+}

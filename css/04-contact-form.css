@@ -1,1 +1,43 @@
-/* No CSS *//*# sourceMappingURL=04-contact-form.css.map */
+body main #contact-form form .contact-input-group {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body main #contact-form form fieldset {
+  border: 1px solid #70C7DC;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+body main #contact-form form fieldset legend {
+  background: linear-gradient(-20deg, #70C7DC, #70C7C8);
+  color: #f5f3f3;
+  border-radius: 10px;
+  padding: 10px 20px;
+}
+
+body main #contact-form form fieldset label {
+  display: inline-block;
+  width: 100px;
+  text-align: right;
+}
+
+body main #contact-form form fieldset input {
+  width: calc(100% - 100px);
+  height: 50px;
+  border-radius: 5px;
+  border: 1px solid #70C7DC;
+}
+
+body main #contact-form form fieldset input[type=textarea] {
+  height: 200px;
+}
+/*# sourceMappingURL=04-contact-form.css.map */

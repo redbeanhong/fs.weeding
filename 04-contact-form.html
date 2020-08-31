@@ -60,8 +60,8 @@
                         </a>
                     </div>
                     <div class="button-group mt-2">
-                        <a href="#" class="button-small button-color-op">聯絡我們</a>
-                        <a href="#" class="button-small button-color-op ml-1">聯絡我們</a>
+                        <a href="./04-contact-form.html" class="button-small button-color-op">聯絡我們</a>
+                        <a href="./04-contact-form.html" class="button-small button-color-op ml-1">聯絡我們</a>
                     </div>
                     <div class="nav-contact mt-2">
                         <h2>&#9742 04-1234-5678</h2>
@@ -74,8 +74,54 @@
         </div>
     </header>
     <main>
-        <section id="contact-form">
-            
+        <section id="contact-form" class="first-section-py">
+            <div class="container">
+                <div class="contact-title-group text-primary">
+                    <h1>聯絡我們</h1>
+                    <h2>Contact us</h2>
+                    <p class="text-dark">如您對方案想要進一步了解，歡迎填寫表單，我們將盡速回覆或與您聯絡，謝謝！</p>
+                </div>
+                <form action="" class="mt-2">
+                    <fieldset>
+                        <legend>
+                            <h3>聯絡資訊</h3>
+                        </legend>
+
+                        <div class="contact-input-group">
+                            <label for="name">
+                                <span>姓名*：</span>
+                            </label>
+                            <input type="text" id="name" name="name" placeholder="(必填)" required="required" maxlength="5">
+                        </div>
+                        <div class="contact-input-group mt-1">
+                            <label for="phone">
+                                <span>聯絡電話*：</span>
+                            </label>
+                            <input type="tel" id="phone" placeholder="(必填)" required="required" oninput = "value=value.replace(/[^\d]/g,'')">
+                        </div>
+                        <div class="contact-input-group mt-1">
+                            <label for="email">
+                                <span>信箱*：</span>
+                            </label>
+                            <input type="email" id="email" placeholder="(必填)" required="required">
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="mt-1">
+                        <legend>
+                            <h3>諮詢內容</h3>
+                        </legend>
+                        <div class="contact-input-group">
+                            <label for="questions">
+                                <span>諮詢內容*：</span>
+                            </label>
+                            <input type="textarea" id="questions" placeholder="(必填)" required="required">
+                        </div>
+                    </fieldset>
+                    <label for="submit-icon"></label>
+                    <input type="submit"class="button-small button-color-primary mt-1" id="submit-icon">
+                </form>
+            </div>
         </section>
     </main>
     <footer class="bg-primary text-light section-py">
